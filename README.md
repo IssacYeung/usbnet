@@ -14,7 +14,7 @@ No additional libraries other than those included in the Pico SDK are needed. On
 I have tested this on Windows 11 and iOS (CDC-NCM only), and I am aware of it working at least in Linux. I expect it will work for MacOS and Android too (feedback welcome!).
 I've confirmed or had others confirm it works on the Pico W (RP2040) and Pico 2 W (RP2350). It should work fine on the non-W versions too.
 
-**Don't forget to change the board type to your correct board (bottom-right of VS Code window, or the `PICO_BOARD` define in `CMakeLists.txt`)**
+The project is configured by default for Pico W (`pico_w`). **If you're using a different board, change the board type to your correct board (bottom-right of VS Code window, or the `PICO_BOARD` define in `CMakeLists.txt`)**
 
 For Pico W and Pico 2 W, if you need to use CYW43-specific functionality, after adding `cyw43_arch_init()` call `usb_network_init(...)` with the last parameter (init_lwip) as `false` to avoid re-initialising lwIP again.
 If you use the e.g. `pico_cyw43_arch_lwip_poll` library in CMakeLists.txt then you can remove the pico_lwip* libraries in this example (as they'll be linked anyway).
